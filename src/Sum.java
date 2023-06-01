@@ -7,21 +7,4 @@ public class Sum extends MultiSum{
         this.f2 = f2;
     }
 
-    @Override
-    public double valueAt(double x) {
-        return f1.valueAt(x) + f2.valueAt(x);
-    }
-
-    @Override
-    public Function derivative() {
-        return new Sum(this.f1.derivative(), this.f2.derivative());
-    }
-
-    @Override
-    public String toString() {
-        return "(" + f1.toString() + " + " + f2.toString() + ")";
-    }
-
-
-
 }
