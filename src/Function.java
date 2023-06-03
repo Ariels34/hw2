@@ -52,7 +52,7 @@ public abstract class Function {
             fact[k] = fact[k-1]*k;
         }
         for(int k= 1; k <= n; k++){
-            a[k] = (dev[k].valueAt(0) /fact[k]);
+            a[k] = (dev[k].valueAt(0)/fact[k]);
         }
         return new Polynomial(a);
     }
