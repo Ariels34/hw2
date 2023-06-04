@@ -1,7 +1,12 @@
 public class MultiSum extends Function{
-    protected Function[] f;
+    protected Function[] f;//the functions that describes the multi sum
 
-
+    /**
+     * constructor that gets at least two functions
+     * @param f1 the first function
+     * @param f2 the second function
+     * @param funcs functions array
+     */
     public MultiSum(Function f1, Function f2, Function...funcs){
         this.f = new Function[funcs.length+2];
         this.f[0] = f1;
@@ -11,6 +16,11 @@ public class MultiSum extends Function{
         }
     }
 
+    /**
+     * this method returns the value of the function at x
+     * @param x the x value of the point we want to check
+     * @return the value of the function at x
+     */
     @Override
     public double valueAt(double x) {
         double value = 0;
@@ -20,6 +30,9 @@ public class MultiSum extends Function{
         return value;
     }
 
+    /**
+     * @return a string that describes the function
+     */
     @Override
     public String toString() {
         String func = "(";
@@ -30,6 +43,10 @@ public class MultiSum extends Function{
         return func +")";
     }
 
+    /**
+     * calculates the derivative of the function
+     * @return function object that is the derivative of the function
+     */
     @Override
     public Function derivative() {
         Function[] derF = new Function[this.f.length];
